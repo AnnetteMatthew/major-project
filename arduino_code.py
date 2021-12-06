@@ -24,22 +24,22 @@ void loop()
 
   if (val1 == HIGH || val2 == HIGH)		// check if the input is HIGH
   {                
-   digitalWrite(relayPin, HIGH);  // turn Relay ON
+     digitalWrite(relayPin, HIGH);  // turn Relay ON
     	   if (pirState == LOW) 	     // turned on
-          {
-            Serial.println("Motion detected!");
-      			delay(15000);				// 15 sec delay
-      			pirState = HIGH;
+        {
+           Serial.println("Motion detected!");
+      			  delay(15000);				// 15 sec delay
+      			  pirState = HIGH;
     		  }
-   }
-   else 
-   {
+  }
+  else 
+  {
     	digitalWrite(relayPin, 0); // turn Relay OFF
     	if (pirState == HIGH)		 // turned off
       {
-           	Serial.println("Motion ended!");
+         Serial.println("Motion ended!");
       			pirState = LOW;
-    	}
+    	 }
    }
   
 }
